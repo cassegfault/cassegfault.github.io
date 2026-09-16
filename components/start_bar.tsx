@@ -9,7 +9,6 @@ export default function StartBar({ apps, appDispatch }){
   const minute = now.getMinutes();
   return (
   <div className={styles.startBar}>
-    <div className="padding-2">Start</div>
     <div className={styles.appsContainer}>
       {all_apps.map((app) => (
         <div onClick={()=>appDispatch({id: app.name, type:'open'})}
