@@ -1,8 +1,9 @@
 import styles from './start_bar.module.css';
-import {toTitleCase} from '../utils/string_helpers.ts';
+import {toTitleCase} from '../utils/string_helpers';
+import {AppData} from '../utils/types';
 export default function StartBar({ apps, appDispatch }){
   const open_apps = Object.keys(apps || {}).map((key) => apps[key] ).filter((app) => app.open);
-  const all_apps = Object.values(apps);
+  const all_apps: AppData[] = Object.values(apps);
   const now = new Date();
   const hour = now.getHours() % 12;
   const minute = now.getMinutes();

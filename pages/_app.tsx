@@ -8,11 +8,10 @@ import Console from '../components/apps/console';
 import AboutMe from '../components/apps/about_me';
 import AppWindow from '../components/window';
 import Dock from '../components/dock';
+import {AppData, AppCollection, AppReducerAction} from '../utils/types';
 
-type AppData = { name: string, open: boolean };
-type AppCollection = { [key: string]: AppData };
-type AppReducerAction = { id: string, type: string}
 import styles from './app.module.css';
+const dummyParams = Promise.resolve({});
 
 const apps_initial_state: AppCollection = {};
 function makeApp(name, component, defaults = {open:false, z_index: 0, is_focused: true, is_maximized: false}){
@@ -26,7 +25,7 @@ makeApp('about_me', AboutMe);
 makeApp('resume', Resume);
 
 function setAppFocus(apps: AppCollection, focused_app: string | null) {
-  const z_sorted_apps = Object.keys(apps)
+  const z_sorted_apps: string[] = Object.keys(apps)
                               .filter((name)=>name !== focused_app)
                               .sort((a,b)=> apps[a].z_index - apps[b].z_index);
   if (focused_app){
@@ -36,7 +35,10 @@ function setAppFocus(apps: AppCollection, focused_app: string | null) {
     apps[app].z_index = (index * 10) + 10;
     apps[app].is_focused = false;
   });
-  apps[z_sorted_apps.at(-1)].is_focused = true;
+  const last_app =z_sorted_apps.at(-1); 
+  if (last_app) {
+    apps[last_app].is_focused = true;
+  }
 }
 function appsReducer(apps: AppCollection, action: AppReducerAction){
 
@@ -69,11 +71,11 @@ export default function ResumeSiteApp({ Component, pageProps }: AppProps) {
   },[]);
   const openApps = Object.values(apps).filter((app) => app.open);
   return (
-    <Layout>
+    <Layout params={dummyParams}>
       <div className={styles.desktop}>
         <StartBar apps={apps} appDispatch={dispatch} />
         <Dock apps={apps} appDispatch={dispatch} />
-        <Component apps={apps} appDispatch={dispatch} {...pageProps} /> 
+        <Component {...pageProps} /> 
         {openApps.map((app) => (<AppWindow app={app} apps={apps} appDispatch={dispatch} key={app.name} />))}
       </div>
     </Layout>

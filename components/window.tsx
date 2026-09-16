@@ -1,7 +1,7 @@
 import {useRef, useState, useEffect} from 'react';
 import {useDraggable} from '@reactuses/core';
 import styles from './window.module.css';
-import {toTitleCase} from '../utils/string_helpers.ts';
+import {toTitleCase} from '../utils/string_helpers';
 
 
 export default function AppWindow({app, apps, appDispatch}){
