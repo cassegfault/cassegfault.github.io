@@ -1,0 +1,70 @@
+.dockContainer {
+  position: absolute;
+  bottom:0;
+  width: 100%;
+  display:flex;
+  justify-content: center;
+}
+
+.dock {
+  min-width:30vw;
+  min-height: 100px;
+  height: 7rem;
+  padding-top:1rem;
+  background: url('/icons/dock.svg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-clip: padding-box;
+  display: flex;
+  gap: 1em;
+}
+
+.dockItem {
+  max-height: 100%;
+  height: 100%;
+  margin-top: -1rem;
+  transition: margin-top .3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.dockItem:hover {
+  margin-top: -2rem;
+}
+
+.dockItemWrapper:hover::after {
+  opacity: 1;
+}
+
+.dockItemWrapper::after {
+  content: 'test';
+  display:block;
+  font-family: var(--title-font);
+  position: absolute;
+  border-radius: .3em;
+  top: -4rem;
+  background: var(--base);
+  padding: .5em;
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.dockItemWrapper.aboutMe::after {
+  content: 'About Me';
+}
+
+.dockItemWrapper.resume::after {
+  content: 'My Resume';
+}
+
+.dockItemWrapper.linkedIn::after {
+  content: 'LinkedIn';
+}
+
+.dockItemWrapper.email::after {
+  content: 'Contact Me';
+}
+
+.dockItemWrapper.github::after {
+  content: 'My Github';
+}

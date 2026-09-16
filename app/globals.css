@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@font-face{
+    font-family: "MADE Outer Sans";
+    src: url("../public/fonts/1d81eac237227119f80768d030d2326a.eot");
+    src: url("../public/fonts/1d81eac237227119f80768d030d2326a.eot?#iefix")format("embedded-opentype"),
+         url("../public/fonts/1d81eac237227119f80768d030d2326a.woff")format("woff"),
+         url("../public/fonts/1d81eac237227119f80768d030d2326a.woff2")format("woff2"),
+         url("../public/fonts/1d81eac237227119f80768d030d2326a.ttf")format("truetype"),
+         url("../public/fonts/1d81eac237227119f80768d030d2326a.svg#MADE Outer Sans")format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+}
+
+:root {
+  --rosewater:  #dc8a78;
+  --flamingo:   #dd7878;
+  --pink:       #ea76cb;
+  --mauve:      #8839ef;
+  --red:        #d20f39;
+  --maroon:     #e64553;
+  --peach:      #fe640b;
+  --yellow:     #df8e1d;
+  --green:      #40a02b;
+  --teal:       #179299;
+  --sky:        #04a5e5;
+  --sapphire:   #209fb5;
+  --blue:       #1e66f5;
+  --lavender:   #7287fd;
+  --text:       #4c4f69;
+  --subtext-1:  #5c5f77;
+  --subtext-0:  #6c6f85;
+  --overlay-2:  #7c7f93;
+  --overlay-1:  #8c8fa1;
+  --overlay-0:  #9ca0b0;
+  --surface-2:  #acb0be;
+  --surface-1:  #bcc0cc;
+  --surface-0:  #ccd0da;
+  --base:       #eff1f5;
+  --mantle:     #e6e9ef;
+  --crust:      #dce0e8;
+  --border:     #303446;
+  --title-font: "MADE Outer Sans", Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--base);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.pill {
+  display: inline-block;
+  padding: .25em;
+  border-radius: .5em;
+  color: var(--base);
+  font-size: .8em;
+  margin: 0 .25em;
+}
+
+.pill-rosewater {
+  background: var(--rosewater);
+}
+.pill-flamingo {
+  background: var(--flamingo);
+}
+.pill-pink {
+  background: var(--pink);
+}
+.pill-mauve {
+  background: var(--mauve);
+}
+.pill-red {
+  background: var(--red);
+}
+.pill-maroon {
+  background: var(--maroon);
+}
+.pill-peach {
+  background: var(--peach);
+}
+.pill-yellow {
+  background: var(--yellow);
+}
+.pill-green {
+  background: var(--green);
+}
+.pill-teal {
+  background: var(--teal);
+}
+.pill-sky {
+  background: var(--sky);
+}
+.pill-sapphire {
+  background: var(--sapphire);
+}
+.pill-blue {
+  background: var(--blue);
+}
+.pill-lavender {
+  background: var(--lavender);
+}

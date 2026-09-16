@@ -1,0 +1,87 @@
+.window {
+  background: var(--mantle);
+  border: 3px solid var(--overlay-2);
+  border-radius: 1em;
+  overflow: hidden;
+  resize: both;
+  min-width: 300px;
+  min-height: 300px;
+}
+
+.window.windowFocused {
+  border-color: var(--border);
+}
+
+.windowHandle {
+  background: var(--crust);
+  position: relative;
+  padding: .5em;
+  pointer: move;
+  user-select: none;
+  border-bottom: 3px solid var(--overlay-2);
+}
+
+.windowFocused .windowHandle {
+  border-color: var(--border);
+}
+
+.windowTitle {
+  color: var(--subtext-0);
+  font-weight: bold;
+  font-family: var(--title-font);
+}
+
+.windowFocused .windowTitle {
+  color: var(--text);
+}
+
+.statusBar {
+  min-height:1em;
+  border-top: 3px solid var(--overlay-2);
+  user-select:none;
+}
+
+.windowFocused .statusBar {
+  border-color: var(--border);
+}
+
+.windowMaximized {
+  width: 100%;
+  height:100%;
+}
+
+.buttonContainer {
+  position:absolute;
+  top:0;
+  right:0;
+  display:flex;
+  padding: .7em;
+}
+
+.maximizeButton {
+  width: 1em;
+  height: 1em;
+  border-radius: 2em;
+  border: 3px solid var(--border);
+  background-color: rgba(from var(--yellow) r g b / 0.5);
+  margin: 0 .25em;
+}
+
+.maximizeButton:hover {
+  background-color: var(--yellow);
+  cursor:pointer;
+}
+
+.closeButton {
+  width: 1em;
+  height: 1em;
+  border-radius: 2em;
+  border: 3px solid var(--border);
+  background-color: rgba(from var(--red) r g b / 0.5);
+  margin: 0 .25em;
+}
+
+.closeButton:hover {
+  background-color: var(--red);
+  cursor:pointer;
+}

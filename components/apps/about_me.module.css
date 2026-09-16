@@ -1,0 +1,47 @@
+.container {
+  padding:1em;
+  min-width: 600px;
+  background: var(--base);
+}
+
+.imageContainer {
+  display:flex;
+}
+
+.image {
+  border-radius: 12em;
+  max-height:12em;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: bold;
+  font-family: var(--title-font);
+  margin-bottom:0;
+  padding-bottom:0;
+}
+
+.subtitle {
+  color: var(--subtext-2);
+  font-family: var(--title-font);
+}
+
+.pillContainer {
+  display: flex;
+  justify-content: center;
+  padding: 1em 0;
+}
+
+.resumeLink {
+  color: var(--blue);
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
