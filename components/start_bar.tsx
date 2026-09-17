@@ -12,6 +12,7 @@ export default function StartBar({ apps, appDispatch }){
     <div className={styles.appsContainer}>
       {all_apps.map((app) => (
         <div onClick={()=>appDispatch({id: app.name, type:'open'})}
+            key={app.name}
             className={`${styles.app} ${app.is_focused ? styles.appRunning : ''}`}>
           {toTitleCase(app.name)}
         </div>
